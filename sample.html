@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="script.js"></script>
+    <title>Input Recovery Sample</title>
+    <script>
+      $(document).ready(function () {
+        // フォームが送信されるとデータをログに出力
+        $('#sampleForm').on('submit', function (e) {
+          e.preventDefault(); // デフォルトの送信を防ぐ
+          const formData = $(this).serializeArray();
+          console.log(formData);
+          alert('フォームが送信されました！');
+        });
+      });
+    </script>
+  </head>
+  <body>
+    <h1>サンプル入力フォーム</h1>
+    <form id="sampleForm">
+      <!-- テキスト入力 -->
+      <div>
+        <label for="username">ユーザー名:</label>
+        <input type="text" id="username" name="username" required />
+      </div>
+      <br />
+
+      <!-- パスワード入力 -->
+      <div>
+        <label for="password">パスワード:</label>
+        <input type="password" id="password" name="password" required />
+      </div>
+      <br />
+
+      <!-- ラジオボタン -->
+      <fieldset>
+        <legend>性別:</legend>
+        <label>
+          <input type="radio" name="gender" value="male" required /> 男性
+        </label>
+        <label>
+          <input type="radio" name="gender" value="female" /> 女性
+        </label>
+        <label>
+          <input type="radio" name="gender" value="other" /> その他
+        </label>
+      </fieldset>
+      <br />
+
+      <!-- チェックボックス -->
+      <fieldset>
+        <legend>趣味:</legend>
+        <label>
+          <input type="checkbox" name="hobby" value="reading" /> 読書
+        </label>
+        <label>
+          <input type="checkbox" name="hobby" value="sports" /> スポーツ
+        </label>
+        <label>
+          <input type="checkbox" name="hobby" value="traveling" /> 旅行
+        </label>
+      </fieldset>
+      <br />
+
+      <!-- セレクトボックス -->
+      <div>
+        <label for="country">国籍:</label>
+        <select id="country" name="country" required>
+          <option value="" disabled selected>選択してください</option>
+          <option value="japan">日本</option>
+          <option value="usa">アメリカ</option>
+          <option value="uk">イギリス</option>
+        </select>
+      </div>
+      <br />
+
+      <!-- 送信ボタン -->
+      <button type="submit">送信</button>
+    </form>
+  </body>
+</html>
