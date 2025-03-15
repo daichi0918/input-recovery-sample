@@ -24,7 +24,7 @@ $(document).ready(function () {
   const getInputValues = () => {
     // hidden のやつは希望日
     return $(
-      "input[type=text],input[type=email],input[type=tel],textarea,select,input[type=hidden][name='data\\[T31202\\]\\[calendarData\\]']"
+      "input[type=text],input[type=email],input[type=tel],textarea,select"
     )
       .get()
       .map((element) => {
