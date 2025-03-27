@@ -1,20 +1,3 @@
-// // for text or select
-// type InputValue = {
-//   name: string;
-//   val: string;
-// };
-
-// // for radio or checkbox
-// type InputCheck = {
-//   name: string;
-//   ids: string[];
-// };
-
-// type SaveType = {
-//   values: InputValue[];
-//   checks: InputCheck[];
-// };
-
 $(document).ready(function () {
   /**
    * for text or select
